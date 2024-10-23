@@ -68,7 +68,7 @@ class DeskYogaScreen extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   height: 235,
-                  child: Image.asset('assets/Desk_Yoga.jpg'),
+                  child: Image.asset('assets/Desk_Yoga_Image.jpg'),
                 ),
               ]),
             ),
