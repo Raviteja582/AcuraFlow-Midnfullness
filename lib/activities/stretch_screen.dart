@@ -49,7 +49,7 @@ class StretchScreen extends StatelessWidget {
               padding: const EdgeInsets.all(15),
               itemCount: 4, // Set the number of items in the list
               itemBuilder: (context, index) {
-                final imagePath = "assets/Step1_$index.PNG";
+                final imagePath = "assets/Stretch_$index.PNG";
 
                 return Padding(
                   padding: const EdgeInsets.all(4),
