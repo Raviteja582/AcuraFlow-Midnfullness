@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'journalling_screen.dart';
+import 'journalling_screen.dart';
 import 'meditation_screen.dart';
 import 'sleep_screen.dart';
 import 'activities/activity_breaks_screen.dart';
@@ -51,12 +51,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: 250,
               height: 250,
-              padding: EdgeInsets.only(top: 3.0, bottom: 3),
+              padding: const EdgeInsets.only(top: 3.0, bottom: 3),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(children: [
-                Container(
+                SizedBox(
                   width: double.infinity,
                   height: 240,
                   child: Image.asset('assets/mindfullness_home_image.png'),
@@ -149,9 +149,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     side: const BorderSide(color: Colors.grey, width: 2.0),
                   ),
                   onPressed: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //   builder: (context) => NotepadScreen(),
-                    // ));
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => NotepadScreen(),
+                    ));
                   },
                   child: const Text(
                     'Journalling',
