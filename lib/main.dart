@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'journalling_screen.dart';
 import 'meditation_screen.dart';
 import 'sleep_screen.dart';
-// import 'activity_breaks_screen.dart';
+import 'activities/activity_breaks_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -127,9 +127,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     side: const BorderSide(color: Colors.grey, width: 2.0),
                   ),
                   onPressed: () {
-                    // Navigator.of(context).push(MaterialPageRoute(
-                    //   builder: (context) => const ActivityBreaksScreen(),
-                    // ));
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ActivityBreaksScreen(),
+                    ));
                   },
                   child: const Text(
                     'Activity Breaks',
