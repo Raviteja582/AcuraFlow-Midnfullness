@@ -4,7 +4,6 @@ import 'desk_yoga.dart';
 import 'quick_walk.dart';
 import 'visualization_screen.dart';
 import 'laughter_screen.dart';
-import 'music_screen.dart';
 
 class ActivityBreaksScreen extends StatefulWidget {
   const ActivityBreaksScreen({super.key});
