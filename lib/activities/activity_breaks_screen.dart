@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'stretch_screen.dart';
 import 'desk_yoga.dart';
 import 'quick_walk.dart';
-// import 'package:mindit/visualization_screen.dart';
-// import 'package:mindit/laughter_screen.dart';
-// import 'package:mindit/music_screen.dart';
+import 'visualization_screen.dart';
+import 'laughter_screen.dart';
+import 'music_screen.dart';
 
 class ActivityBreaksScreen extends StatefulWidget {
   const ActivityBreaksScreen({super.key});
@@ -113,60 +113,60 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
               ],
             ),
             const SizedBox(height: 10),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: <Widget>[
-            //     ElevatedButton(
-            //       style: ElevatedButton.styleFrom(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(10.0),
-            //         ),
-            //         padding: const EdgeInsets.all(15.0),
-            //         backgroundColor: Colors.black,
-            //         foregroundColor: Colors.white,
-            //         fixedSize: const Size(250.0, 70.0),
-            //         side: const BorderSide(color: Colors.grey, width: 2.0),
-            //       ),
-            //       onPressed: () {
-            //         Navigator.of(context).push(MaterialPageRoute(
-            //           builder: (context) => const AlarmPage(),
-            //         ));
-            //       },
-            //       child: const Text(
-            //         'Visualization',
-            //         style: TextStyle(fontSize: 16.0),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            // const SizedBox(height: 10),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: <Widget>[
-            //     ElevatedButton(
-            //       style: ElevatedButton.styleFrom(
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(10.0),
-            //         ),
-            //         padding: const EdgeInsets.all(15.0),
-            //         backgroundColor: Colors.black,
-            //         foregroundColor: Colors.white,
-            //         fixedSize: const Size(250.0, 70.0),
-            //         side: const BorderSide(color: Colors.grey, width: 2.0),
-            //       ),
-            //       onPressed: () {
-            //         Navigator.of(context).push(MaterialPageRoute(
-            //           builder: (context) => const LaughterScreen(),
-            //         ));
-            //       },
-            //       child: const Text(
-            //         'Laughter',
-            //         style: TextStyle(fontSize: 16.0),
-            //       ),
-            //     ),
-            //   ],
-            // ),
-            // const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    padding: const EdgeInsets.all(15.0),
+                    backgroundColor: Colors.black,
+                    foregroundColor: Colors.white,
+                    fixedSize: const Size(250.0, 70.0),
+                    side: const BorderSide(color: Colors.grey, width: 2.0),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const AlarmPage(),
+                    ));
+                  },
+                  child: const Text(
+                    'Visualization',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    padding: const EdgeInsets.all(15.0),
+                    backgroundColor: Colors.black,
+                    foregroundColor: Colors.white,
+                    fixedSize: const Size(250.0, 70.0),
+                    side: const BorderSide(color: Colors.grey, width: 2.0),
+                  ),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const LaughterScreen(),
+                    ));
+                  },
+                  child: const Text(
+                    'Laughter',
+                    style: TextStyle(fontSize: 16.0),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 10),
             /* Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
