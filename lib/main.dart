@@ -76,140 +76,164 @@ class _MyHomePageState extends State<MyHomePage> {
     return FutureBuilder<Affirmation?>(
       future: _affirmation,
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done && snapshot.hasData) {
+        if (snapshot.connectionState == ConnectionState.done &&
+            snapshot.hasData) {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             if (snapshot.data != null) _showAffirmationPopup(snapshot.data!);
           });
         }
         return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.black,
-            title: Text(
-              widget.title,
-              style: const TextStyle(fontFamily: 'Playwrite'),
+            appBar: AppBar(
+              backgroundColor: Colors.black,
+              title: Text(
+                widget.title,
+                style: const TextStyle(fontFamily: 'Playwrite'),
+              ),
+              foregroundColor: Colors.white,
             ),
-            foregroundColor: Colors.white,
-          ),
-          body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+            body: Stack(
+              children: [
                 Container(
-                  width: 250,
-                  height: 250,
-                  padding: const EdgeInsets.only(top: 3.0, bottom: 3),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/background.png'), // Specify the image path
+                      fit: BoxFit.cover, // Cover the entire screen
+                    ),
                   ),
-                  child: Column(children: [
-                    SizedBox(
-                      width: double.infinity,
-                      height: 240,
-                      child: Image.asset('assets/mindfullness_home_image.png'),
-                    ),
-                  ]),
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
+                Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        width: 250,
+                        height: 250,
+                        padding: const EdgeInsets.only(top: 3.0, bottom: 3),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        padding: const EdgeInsets.all(15.0),
-                        backgroundColor: Colors.black,
-                        foregroundColor: Colors.white,
-                        fixedSize: const Size(150.0, 70.0),
-                        side: const BorderSide(color: Colors.grey, width: 2.0),
+                        child: Column(children: [
+                          SizedBox(
+                            width: double.infinity,
+                            height: 240,
+                            child: Image.asset(
+                                'assets/mindfullness_home_image.png'),
+                          ),
+                        ]),
                       ),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const MeditationScreen(),
-                        ));
-                      },
-                      child: const Text(
-                        'Meditation',
-                        style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              padding: const EdgeInsets.all(15.0),
+                              backgroundColor: Colors.black,
+                              foregroundColor: Colors.white,
+                              fixedSize: const Size(150.0, 70.0),
+                              side: const BorderSide(
+                                  color: Colors.grey, width: 2.0),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const MeditationScreen(),
+                              ));
+                            },
+                            child: const Text(
+                              'Meditation',
+                              style: TextStyle(
+                                  fontSize: 16.0, fontFamily: 'Playwrite'),
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              padding: const EdgeInsets.all(15.0),
+                              backgroundColor: Colors.black,
+                              foregroundColor: Colors.white,
+                              fixedSize: const Size(150.0, 70.0),
+                              side: const BorderSide(
+                                  color: Colors.grey, width: 2.0),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const SleepScreen(),
+                              ));
+                            },
+                            child: const Text(
+                              'Sleep',
+                              style: TextStyle(
+                                  fontSize: 16.0, fontFamily: 'Playwrite'),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    const SizedBox(width: 10),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        padding: const EdgeInsets.all(15.0),
-                        backgroundColor: Colors.black,
-                        foregroundColor: Colors.white,
-                        fixedSize: const Size(150.0, 70.0),
-                        side: const BorderSide(color: Colors.grey, width: 2.0),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              padding: const EdgeInsets.all(15.0),
+                              backgroundColor: Colors.black,
+                              foregroundColor: Colors.white,
+                              fixedSize: const Size(150.0, 70.0),
+                              side: const BorderSide(
+                                  color: Colors.grey, width: 2.0),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    const ActivityBreaksScreen(),
+                              ));
+                            },
+                            child: const Text(
+                              'Activity Breaks',
+                              style: TextStyle(
+                                  fontSize: 14.0, fontFamily: 'Playwrite'),
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              padding: const EdgeInsets.all(15.0),
+                              backgroundColor: Colors.black,
+                              foregroundColor: Colors.white,
+                              fixedSize: const Size(150.0, 70.0),
+                              side: const BorderSide(
+                                  color: Colors.grey, width: 2.0),
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) =>
+                                    const NotepadScreen("Journalling"),
+                              ));
+                            },
+                            child: const Text(
+                              'Journalling',
+                              style: TextStyle(
+                                  fontSize: 16.0, fontFamily: 'Playwrite'),
+                            ),
+                          ),
+                        ],
                       ),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const SleepScreen(),
-                        ));
-                      },
-                      child: const Text(
-                        'Sleep',
-                        style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        padding: const EdgeInsets.all(15.0),
-                        backgroundColor: Colors.black,
-                        foregroundColor: Colors.white,
-                        fixedSize: const Size(150.0, 70.0),
-                        side: const BorderSide(color: Colors.grey, width: 2.0),
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const ActivityBreaksScreen(),
-                        ));
-                      },
-                      child: const Text(
-                        'Activity Breaks',
-                        style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        padding: const EdgeInsets.all(15.0),
-                        backgroundColor: Colors.black,
-                        foregroundColor: Colors.white,
-                        fixedSize: const Size(150.0, 70.0),
-                        side: const BorderSide(color: Colors.grey, width: 2.0),
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const NotepadScreen(),
-                        ));
-                      },
-                      child: const Text(
-                        'Journalling',
-                        style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
-            ),
-          ),
-        );
+            ));
       },
     );
   }
