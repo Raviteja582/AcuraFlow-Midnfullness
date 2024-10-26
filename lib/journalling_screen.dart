@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class NotepadScreen extends StatefulWidget {
-  const NotepadScreen({super.key, required this.title});
+  const NotepadScreen(this.title, {super.key});
   final String title;
   @override
   // ignore: library_private_types_in_public_api
