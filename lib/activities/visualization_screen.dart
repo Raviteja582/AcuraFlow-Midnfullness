@@ -85,6 +85,7 @@ class _AlarmPageState extends State<AlarmPage> {
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
+                  fontFamily: 'Playwrite'
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -122,6 +123,7 @@ class _AlarmPageState extends State<AlarmPage> {
                   fontSize: 15,
                   fontWeight: FontWeight.normal,
                   color: Colors.black,
+                  fontFamily: 'Playwrite'
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -140,6 +142,7 @@ class _AlarmPageState extends State<AlarmPage> {
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
+                  fontFamily: 'Playwrite'
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -168,7 +171,7 @@ class _AlarmPageState extends State<AlarmPage> {
                   },
                   child: const Text(
                     'Start',
-                    style: TextStyle(fontSize: 14.0),
+                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
                   ),
                 ),
                 const SizedBox(width: 5),
@@ -193,7 +196,7 @@ class _AlarmPageState extends State<AlarmPage> {
                   },
                   child: const Text(
                     'Pause',
-                    style: TextStyle(fontSize: 14.0),
+                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
                   ),
                 ),
                 const SizedBox(width: 5),
@@ -216,7 +219,7 @@ class _AlarmPageState extends State<AlarmPage> {
                   },
                   child: const Text(
                     'Reset',
-                    style: TextStyle(fontSize: 14.0),
+                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],

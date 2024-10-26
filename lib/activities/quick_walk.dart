@@ -73,6 +73,7 @@ class _QuickWalkScreenState extends State<QuickWalkScreen> {
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
+                fontFamily: 'Playwrite'
               ),
               textAlign: TextAlign.center,
             ),
@@ -109,6 +110,7 @@ class _QuickWalkScreenState extends State<QuickWalkScreen> {
                   fontSize: 15,
                   fontWeight: FontWeight.normal,
                   color: Colors.black,
+                  fontFamily: 'Playwrite'
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -127,6 +129,7 @@ class _QuickWalkScreenState extends State<QuickWalkScreen> {
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                   color: Colors.black,
+                  fontFamily: 'Playwrite'
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -155,7 +158,7 @@ class _QuickWalkScreenState extends State<QuickWalkScreen> {
                   },
                   child: const Text(
                     'Start',
-                    style: TextStyle(fontSize: 14.0),
+                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
                   ),
                 ),
                 const SizedBox(width: 5),
@@ -180,7 +183,7 @@ class _QuickWalkScreenState extends State<QuickWalkScreen> {
                   },
                   child: const Text(
                     'Pause',
-                    style: TextStyle(fontSize: 14.0),
+                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
                   ),
                 ),
                 const SizedBox(width: 5),
@@ -203,7 +206,7 @@ class _QuickWalkScreenState extends State<QuickWalkScreen> {
                   },
                   child: const Text(
                     'Reset',
-                    style: TextStyle(fontSize: 14.0),
+                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],

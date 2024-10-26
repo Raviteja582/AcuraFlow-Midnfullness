@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.black,
         title: Text(
           widget.title,
+          style: TextStyle(fontFamily: 'Playwrite'),
         ),
         foregroundColor: Colors.white,
       ),
@@ -84,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text(
                     'Meditation',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -106,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text(
                     'Sleep',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],
@@ -133,7 +134,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text(
                     'Activity Breaks',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
                   ),
                 ),
                 const SizedBox(width: 10),
@@ -155,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text(
                     'Journalling',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],

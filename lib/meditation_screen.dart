@@ -27,6 +27,7 @@ class MeditationScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
+                fontFamily: 'Playwrite'
               ),
               textAlign: TextAlign.center,
             ),
@@ -38,6 +39,7 @@ class MeditationScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.normal,
+                fontFamily: 'Playwrite'
               ),
               textAlign: TextAlign.center,
             ),
@@ -49,6 +51,7 @@ class MeditationScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.bold,
+              fontFamily: 'Playwrite'
             ),
             textAlign: TextAlign.center,
           ),
@@ -60,6 +63,7 @@ class MeditationScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.bold,
+              fontFamily: 'Playwrite'
             ),
             textAlign: TextAlign.center,
           ),
@@ -71,6 +75,7 @@ class MeditationScreen extends StatelessWidget {
             style: TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.bold,
+              fontFamily: 'Playwrite'
             ),
             textAlign: TextAlign.center,
           ),

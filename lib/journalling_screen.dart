@@ -65,6 +65,7 @@ class _NotepadScreenState extends State<NotepadScreen> {
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
+                fontFamily: 'Playwrite'
               ),
               textAlign: TextAlign.center,
             ),
@@ -76,6 +77,7 @@ class _NotepadScreenState extends State<NotepadScreen> {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.normal,
+                fontFamily: 'Playwrite'
               ),
               textAlign: TextAlign.center,
             ),
@@ -121,7 +123,7 @@ class _NotepadScreenState extends State<NotepadScreen> {
                     setState(() {});
                   }
                 },
-                child: Text(selectedNoteIndex != -1 ? 'Edit/Save' : 'Save'),
+                child: Text(selectedNoteIndex != -1 ? 'Edit/Save' : 'Save', style: TextStyle(fontFamily: 'Playwrite'),),
               ),
               const SizedBox(width: 10), // Add spacing between buttons
               ElevatedButton(
@@ -139,7 +141,7 @@ class _NotepadScreenState extends State<NotepadScreen> {
                   noteController.clear();
                   selectedNoteIndex = -1;
                 },
-                child: const Text('Cancel'),
+                child: const Text('Cancel', style: TextStyle(fontFamily: 'Playwrite'),),
               ),
               const SizedBox(width: 18),
             ],

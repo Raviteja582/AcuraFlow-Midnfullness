@@ -40,6 +40,7 @@ class StretchScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
+                fontFamily: 'Playwrite'
               ),
               textAlign: TextAlign.center,
             ),
@@ -98,6 +99,7 @@ class StretchScreen extends StatelessWidget {
                                   style: const TextStyle(
                                     fontSize: 16,
                                     color: Colors.white,
+                                    fontFamily: 'Playwrite'
                                   ),
                                   textAlign: TextAlign.left,
                                 ),
@@ -110,6 +112,7 @@ class StretchScreen extends StatelessWidget {
                                   style: const TextStyle(
                                     fontSize: 14,
                                     color: Colors.grey,
+                                    fontFamily: 'Playwrite'
                                   ),
                                   textAlign: TextAlign.justify,
                                 ),

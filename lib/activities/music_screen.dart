@@ -9,7 +9,7 @@ class MusicScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Gentle Music"),
+        title: Text("Gentle Music", style: TextStyle(fontFamily: 'Playwrite'),),
       ),
       body: ListView(
         children: <Widget>[
@@ -20,6 +20,7 @@ class MusicScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 20.0,
                 fontWeight: FontWeight.bold,
+                fontFamily: 'Playwrite'
               ),
               textAlign: TextAlign.justify,
             ),
@@ -34,7 +35,7 @@ class MusicScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text("Back to Home"),
+            child: Text("Back to Home", style: TextStyle(fontFamily: 'Playwrite'),),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
               minimumSize: Size(100, 30),

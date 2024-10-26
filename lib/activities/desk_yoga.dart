@@ -39,6 +39,7 @@ class DeskYogaScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Playwrite'
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -47,6 +48,7 @@ class DeskYogaScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.black,
+                      fontFamily: 'Playwrite'
                     ),
                     textAlign: TextAlign.justify,
                   ),
@@ -83,6 +85,7 @@ class DeskYogaScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
+                      fontFamily: 'Playwrite'
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -91,6 +94,7 @@ class DeskYogaScreen extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 15,
                           color: Colors.black,
+                          fontFamily: 'Playwrite'
                         ),
                         textAlign: TextAlign.justify,
                       )),

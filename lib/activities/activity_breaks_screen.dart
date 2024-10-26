@@ -52,7 +52,7 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
                   },
                   child: const Text(
                     'Stretch',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],
@@ -79,7 +79,7 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
                   },
                   child: const Text(
                     'Desk Yoga',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],
@@ -106,7 +106,7 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
                   },
                   child: const Text(
                     'Quick Walk',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],
@@ -133,7 +133,7 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
                   },
                   child: const Text(
                     'Visualization',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],
@@ -160,7 +160,7 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
                   },
                   child: const Text(
                     'Laughter',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],
@@ -187,7 +187,7 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
                   },
                   child: const Text(
                     'Gentle Music',
-                    style: TextStyle(fontSize: 16.0),
+                    style: TextStyle(fontSize: 16.0, fontFamily: 'Playwrite'),
                   ),
                 ),
               ],
