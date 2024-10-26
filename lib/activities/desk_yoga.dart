@@ -19,10 +19,9 @@ class DeskYogaScreen extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Colors.black,
           elevation: 0,
-          title: Container(
-            decoration: const BoxDecoration(
-              color: Colors.black,
-            ),
+          title: const Text(
+            "Desk Yoga",
+            style: TextStyle(fontFamily: 'Playwrite'),
           ),
           foregroundColor: Colors.white,
         ),

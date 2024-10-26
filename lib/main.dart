@@ -127,50 +127,80 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: <Widget>[
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              minimumSize: const Size(150, 70),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              padding: const EdgeInsets.all(15.0),
+                                  borderRadius: BorderRadius.circular(10)),
                               backgroundColor: Colors.black,
-                              foregroundColor: Colors.white,
-                              fixedSize: const Size(150.0, 70.0),
                               side: const BorderSide(
                                   color: Colors.grey, width: 2.0),
+                            ),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                      'assets/button_bg.png'), // Set your image path
+                                  fit: BoxFit.fill,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Container(
+                                alignment: Alignment.center,
+                                width: 150,
+                                height: 70,
+                                child: const Text(
+                                  'Meditation',
+                                  style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.white,
+                                      fontFamily: 'Playwrite'),
+                                ),
+                              ),
                             ),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => const MeditationScreen(),
                               ));
                             },
-                            child: const Text(
-                              'Meditation',
-                              style: TextStyle(
-                                  fontSize: 16.0, fontFamily: 'Playwrite'),
-                            ),
                           ),
                           const SizedBox(width: 10),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              minimumSize: const Size(150, 70),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              padding: const EdgeInsets.all(15.0),
+                                  borderRadius: BorderRadius.circular(10)),
                               backgroundColor: Colors.black,
-                              foregroundColor: Colors.white,
-                              fixedSize: const Size(150.0, 70.0),
                               side: const BorderSide(
                                   color: Colors.grey, width: 2.0),
+                            ),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                      'assets/button_bg.png'), // Set your image path
+                                  fit: BoxFit.fill,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Container(
+                                alignment: Alignment.center,
+                                width: 150,
+                                height: 70,
+                                child: const Text(
+                                  'Sleep',
+                                  style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.white,
+                                      fontFamily: 'Playwrite'),
+                                ),
+                              ),
                             ),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => const SleepScreen(),
                               ));
                             },
-                            child: const Text(
-                              'Sleep',
-                              style: TextStyle(
-                                  fontSize: 16.0, fontFamily: 'Playwrite'),
-                            ),
                           ),
                         ],
                       ),
@@ -180,15 +210,35 @@ class _MyHomePageState extends State<MyHomePage> {
                         children: <Widget>[
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              minimumSize: const Size(150, 70),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              padding: const EdgeInsets.all(15.0),
+                                  borderRadius: BorderRadius.circular(10)),
                               backgroundColor: Colors.black,
-                              foregroundColor: Colors.white,
-                              fixedSize: const Size(150.0, 70.0),
                               side: const BorderSide(
                                   color: Colors.grey, width: 2.0),
+                            ),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                      'assets/button_bg.png'), // Set your image path
+                                  fit: BoxFit.fill,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Container(
+                                alignment: Alignment.center,
+                                width: 150,
+                                height: 70,
+                                child: const Text(
+                                  'Activity',
+                                  style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.white,
+                                      fontFamily: 'Playwrite'),
+                                ),
+                              ),
                             ),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
@@ -196,24 +246,39 @@ class _MyHomePageState extends State<MyHomePage> {
                                     const ActivityBreaksScreen(),
                               ));
                             },
-                            child: const Text(
-                              'Activity Breaks',
-                              style: TextStyle(
-                                  fontSize: 14.0, fontFamily: 'Playwrite'),
-                            ),
                           ),
                           const SizedBox(width: 10),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
+                              padding: EdgeInsets.zero,
+                              minimumSize: const Size(150, 70),
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              padding: const EdgeInsets.all(15.0),
+                                  borderRadius: BorderRadius.circular(10)),
                               backgroundColor: Colors.black,
-                              foregroundColor: Colors.white,
-                              fixedSize: const Size(150.0, 70.0),
                               side: const BorderSide(
                                   color: Colors.grey, width: 2.0),
+                            ),
+                            child: Ink(
+                              decoration: BoxDecoration(
+                                image: const DecorationImage(
+                                  image: AssetImage(
+                                      'assets/button_bg.png'), // Set your image path
+                                  fit: BoxFit.fill,
+                                ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Container(
+                                alignment: Alignment.center,
+                                width: 150,
+                                height: 70,
+                                child: const Text(
+                                  'Journalling',
+                                  style: TextStyle(
+                                      fontSize: 16.0,
+                                      color: Colors.white,
+                                      fontFamily: 'Playwrite'),
+                                ),
+                              ),
                             ),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
@@ -221,11 +286,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                     const NotepadScreen("Journalling"),
                               ));
                             },
-                            child: const Text(
-                              'Journalling',
-                              style: TextStyle(
-                                  fontSize: 16.0, fontFamily: 'Playwrite'),
-                            ),
                           ),
                         ],
                       ),

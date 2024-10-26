@@ -53,167 +53,229 @@ class _QuickWalkScreenState extends State<QuickWalkScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
-        title: Container(
-          decoration: const BoxDecoration(
-            color: Colors.black,
-          ),
-        ),
-        foregroundColor: Colors.white,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              'Take a Quick Walk..',
-              style: TextStyle(
-                fontSize: 18,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          elevation: 0,
+          title: const Text(
+            "Quick Walk",
+            style: TextStyle(
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
-                color: Colors.black,
-                fontFamily: 'Playwrite'
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 10),
+                fontFamily: 'Playwrite'),
+          ),
+          foregroundColor: Colors.white,
+        ),
+        body: Stack(
+          children: [
             Container(
-              width: 250,
-              height: 250,
-              padding: const EdgeInsets.only(top: 3.0),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.black,
-                  width: 2.0,
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'assets/background.png'), // Specify the image path
+                  fit: BoxFit.cover, // Cover the entire screen
                 ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(children: [
-                SizedBox(
-                  width: double.infinity,
-                  height: 240,
-                  child: Image.asset('assets/walking_2.gif'),
-                ),
-              ]),
-            ),
-            Container(
-              padding: const EdgeInsets.only(
-                top: 5.0,
-                right: 20.0,
-                bottom: 0.0,
-                left: 20.0,
-              ),
-              child: const Text(
-                'Start the timer, step into serenity, and finish feeling recharged and mindful, one stride at a time..',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.black,
-                  fontFamily: 'Playwrite'
-                ),
-                textAlign: TextAlign.center,
               ),
             ),
-            const SizedBox(height: 10),
-            Container(
-              padding: const EdgeInsets.only(
-                top: 0.0,
-                right: 20.0,
-                bottom: 0.0,
-                left: 20.0,
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Take a Quick Walk..',
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontFamily: 'Playwrite'),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    width: 250,
+                    height: 250,
+                    padding: const EdgeInsets.only(top: 3.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 2.0,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Column(children: [
+                      SizedBox(
+                        width: double.infinity,
+                        height: 240,
+                        child: Image.asset('assets/walking_2.gif'),
+                      ),
+                    ]),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      top: 5.0,
+                      right: 20.0,
+                      bottom: 0.0,
+                      left: 20.0,
+                    ),
+                    child: const Text(
+                      'Start the timer, step into serenity, and finish feeling recharged and mindful, one stride at a time..',
+                      style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.white,
+                          fontFamily: 'Playwrite'),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  Container(
+                    padding: const EdgeInsets.only(
+                      top: 0.0,
+                      right: 20.0,
+                      bottom: 0.0,
+                      left: 20.0,
+                    ),
+                    child: Text(
+                      _formatDuration(_duration),
+                      style: const TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontFamily: 'Playwrite'),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: const Size(70, 30),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          backgroundColor: Colors.black,
+                          side:
+                              const BorderSide(color: Colors.grey, width: 2.0),
+                        ),
+                        child: Ink(
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                  'assets/button_bg.png'), // Set your image path
+                              fit: BoxFit.fill,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 70,
+                            height: 30,
+                            child: const Text(
+                              'start',
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontFamily: 'Playwrite'),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          if (!_isTimerRunning) {
+                            _startTimer();
+                          }
+                          setState(() {
+                            _isTimerRunning = true;
+                          });
+                        },
+                      ),
+                      const SizedBox(width: 5),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: const Size(70, 30),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          backgroundColor: Colors.black,
+                          side:
+                              const BorderSide(color: Colors.grey, width: 2.0),
+                        ),
+                        child: Ink(
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                  'assets/button_bg.png'), // Set your image path
+                              fit: BoxFit.fill,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 70,
+                            height: 30,
+                            child: const Text(
+                              'pause',
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontFamily: 'Playwrite'),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          if (_isTimerRunning) {
+                            _pauseTimer();
+                          }
+                          setState(() {
+                            _isTimerRunning = false;
+                          });
+                        },
+                      ),
+                      const SizedBox(width: 5),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          minimumSize: const Size(70, 30),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          backgroundColor: Colors.black,
+                          side:
+                              const BorderSide(color: Colors.grey, width: 2.0),
+                        ),
+                        child: Ink(
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                              image: AssetImage(
+                                  'assets/button_bg.png'), // Set your image path
+                              fit: BoxFit.fill,
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Container(
+                            alignment: Alignment.center,
+                            width: 70,
+                            height: 30,
+                            child: const Text(
+                              'reset',
+                              style: TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontFamily: 'Playwrite'),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          if (_isTimerRunning) {
+                            _pauseTimer();
+                          }
+                          _resetTimer();
+                        },
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              child: Text(
-                _formatDuration(_duration),
-                style: const TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontFamily: 'Playwrite'
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    padding: const EdgeInsets.all(10.0),
-                    backgroundColor: Colors.black,
-                    foregroundColor: Colors.white,
-                    fixedSize: const Size(70.0, 30.0),
-                    side: const BorderSide(color: Colors.grey, width: 2.0),
-                  ),
-                  onPressed: () {
-                    if (!_isTimerRunning) {
-                      _startTimer();
-                    }
-                    setState(() {
-                      _isTimerRunning = true;
-                    });
-                  },
-                  child: const Text(
-                    'Start',
-                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    padding: const EdgeInsets.all(10.0),
-                    backgroundColor: Colors.black,
-                    foregroundColor: Colors.white,
-                    fixedSize: const Size(70.0, 30.0),
-                    side: const BorderSide(color: Colors.grey, width: 2.0),
-                  ),
-                  onPressed: () {
-                    if (_isTimerRunning) {
-                      _pauseTimer();
-                    }
-                    setState(() {
-                      _isTimerRunning = false;
-                    });
-                  },
-                  child: const Text(
-                    'Pause',
-                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
-                  ),
-                ),
-                const SizedBox(width: 5),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    padding: const EdgeInsets.all(10.0),
-                    backgroundColor: Colors.black,
-                    foregroundColor: Colors.white,
-                    fixedSize: const Size(70.0, 30.0),
-                    side: const BorderSide(color: Colors.grey, width: 2.0),
-                  ),
-                  onPressed: () {
-                    if (_isTimerRunning) {
-                      _pauseTimer();
-                    }
-                    _resetTimer();
-                  },
-                  child: const Text(
-                    'Reset',
-                    style: TextStyle(fontSize: 14.0, fontFamily: 'Playwrite'),
-                  ),
-                ),
-              ],
             ),
           ],
-        ),
-      ),
-    );
+        ));
   }
 }

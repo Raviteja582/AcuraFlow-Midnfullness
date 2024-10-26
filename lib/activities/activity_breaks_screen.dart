@@ -20,10 +20,9 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
         appBar: AppBar(
           backgroundColor: Colors.black,
           elevation: 0,
-          title: Container(
-            decoration: const BoxDecoration(
-              color: Colors.black,
-            ),
+          title: const Text(
+            "Activites",
+            style: TextStyle(fontFamily: 'Playwrite'),
           ),
           foregroundColor: Colors.white,
         ),
@@ -123,7 +122,8 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
                         ),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const DeskYogaScreen("Desk Yoga"),
+                            builder: (context) =>
+                                const DeskYogaScreen("Desk Yoga"),
                           ));
                         },
                       ),
@@ -211,7 +211,8 @@ class _ActivityBreaksScreenState extends State<ActivityBreaksScreen> {
                         ),
                         onPressed: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const AlarmPage(),
+                            builder: (context) =>
+                                const AlarmPage("Visualization"),
                           ));
                         },
                       ),
