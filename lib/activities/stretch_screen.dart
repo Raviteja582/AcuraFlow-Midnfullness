@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class StretchScreen extends StatelessWidget {
-  StretchScreen({super.key});
-
+  StretchScreen(this.title, {super.key});
+  final String title;
   final List<String> textItems = [
     'Stretching for Beginners',
     'Hamstring Stretch',
@@ -20,115 +20,131 @@ class StretchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
-        title: Container(
-          decoration: const BoxDecoration(
-            color: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          elevation: 0,
+          title: Text(
+            title,
+            style: const TextStyle(fontFamily: 'Playwrite'),
           ),
+          foregroundColor: Colors.white,
         ),
-        foregroundColor: Colors.white,
-      ),
-      body: Column(
-        children: [
-          const SizedBox(height: 20),
-          Container(
-            padding: const EdgeInsets.all(10),
-            child: const Text(
-              'Connect with your breath, embrace the stretch...',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Playwrite'
+        body: Stack(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'assets/background.png'), // Specify the image path
+                  fit: BoxFit.cover, // Cover the entire screen
+                ),
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.all(15),
-              itemCount: 4, // Set the number of items in the list
-              itemBuilder: (context, index) {
-                final imagePath = "assets/Stretch_$index.PNG";
-
-                return Padding(
-                  padding: const EdgeInsets.all(4),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.black,
-                      border: Border.all(
-                        color: Colors.grey, // Border color
-                        width: 2.0, // Border width
-                      ),
-                      borderRadius: BorderRadius.circular(10),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 3,
-                          blurRadius: 7,
-                          offset: const Offset(0, 3),
-                        ),
-                      ],
+            Center(
+              child: Column(
+                children: [
+                  const SizedBox(height: 20),
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    child: const Text(
+                      'Connect with your breath, embrace the stretch...',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          fontFamily: 'Playwrite'),
+                      textAlign: TextAlign.center,
                     ),
-                    child: Row(
-                      crossAxisAlignment:
-                          CrossAxisAlignment.start, // Align text to the left
-                      children: [
-                        SizedBox(
-                          width: 130,
-                          height: 170,
-                          child: Image.asset(
-                            imagePath,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        Expanded(
+                  ),
+                  Expanded(
+                    child: ListView.builder(
+                      padding: const EdgeInsets.all(15),
+                      itemCount: textItems
+                          .length, // Set the number of items in the list
+                      itemBuilder: (context, index) {
+                        final imagePath = "assets/Stretch_$index.PNG";
+                        return Padding(
+                          padding: const EdgeInsets.all(4),
                           child: Container(
-                            padding: const EdgeInsets.all(8),
-                            height: 170,
-                            color: Colors.black,
-                            child: Column(
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              border: Border.all(
+                                color: Colors.grey, // Border color
+                                width: 2.0, // Border width
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 3,
+                                  blurRadius: 7,
+                                  offset: const Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            child: Row(
                               crossAxisAlignment: CrossAxisAlignment
                                   .start, // Align text to the left
                               children: [
-                                Text(
-                                  textItems[index],
-                                  // Use main text from the array
-                                  style: const TextStyle(
-                                    fontSize: 16,
-                                    color: Colors.white,
-                                    fontFamily: 'Playwrite'
+                                SizedBox(
+                                  width: 130,
+                                  height: 170,
+                                  child: Image.asset(
+                                    imagePath,
+                                    fit: BoxFit.fill,
                                   ),
-                                  textAlign: TextAlign.left,
                                 ),
-                                const SizedBox(
-                                  height: 4,
-                                ), // Add spacing between main text and description
-                                Text(
-                                  textItemsDesc[
-                                      index], // Use description text from the array
-                                  style: const TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.grey,
-                                    fontFamily: 'Playwrite'
+                                const SizedBox(width: 16),
+                                Expanded(
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    height: 170,
+                                    color: Colors.black,
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment
+                                          .center, // Align text to the left
+                                      children: [
+                                        Text(
+                                          textItems[index],
+                                          // Use main text from the array
+                                          style: const TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.white,
+                                              fontFamily: 'Playwrite'),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        const SizedBox(
+                                          height: 4,
+                                        ), // Add spacing between main text and description
+                                        Flexible(
+                                          fit: FlexFit.loose,
+                                          child: Text(
+                                            overflow: TextOverflow.visible,
+                                            softWrap: true,
+                                            textItemsDesc[
+                                                index], // Use description text from the array
+                                            style: const TextStyle(
+                                                fontSize: 14,
+                                                color: Colors.grey,
+                                                fontFamily: 'Playwrite'),
+                                            textAlign: TextAlign.justify,
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                  textAlign: TextAlign.justify,
                                 ),
                               ],
                             ),
                           ),
-                        ),
-                      ],
+                        );
+                      },
                     ),
                   ),
-                );
-              },
-            ),
-          ),
-        ],
-      ),
-    );
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }
