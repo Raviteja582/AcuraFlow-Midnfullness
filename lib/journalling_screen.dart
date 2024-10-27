@@ -112,7 +112,7 @@ class _NotepadScreenState extends State<NotepadScreen> {
                           color: Color(0xFFbdc6cf),
                           fontFamily: 'Playwrite'),
                       controller: noteController,
-                      maxLines: 10,
+                      maxLines: 3,
                       textAlign: TextAlign.start,
                       decoration: const InputDecoration(
                         labelText: 'The MindFul Diary..',
