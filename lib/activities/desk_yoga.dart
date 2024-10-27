@@ -30,8 +30,8 @@ class DeskYogaScreen extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                    'assets/background.png'), // Specify the image path
-                fit: BoxFit.cover, // Cover the entire screen
+                    'assets/background.png'),
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -69,8 +69,8 @@ class DeskYogaScreen extends StatelessWidget {
                   height: 250,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.black, // Border color
-                      width: 2.0, // Border width
+                      color: Colors.black,
+                      width: 2.0,
                     ),
                     borderRadius: BorderRadius.circular(20),
                   ),

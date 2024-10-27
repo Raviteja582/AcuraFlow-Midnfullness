@@ -61,8 +61,8 @@ class _NotepadScreenState extends State<NotepadScreen> {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                      'assets/background.png'), // Specify the image path
-                  fit: BoxFit.cover, // Cover the entire screen
+                      'assets/background.png'),
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -73,8 +73,8 @@ class _NotepadScreenState extends State<NotepadScreen> {
                     decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage(
-                            'assets/background.png'), // Specify the image path
-                        fit: BoxFit.cover, // Cover the entire screen
+                            'assets/background.png'),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
@@ -122,7 +122,7 @@ class _NotepadScreenState extends State<NotepadScreen> {
                   ),
                   Row(
                     mainAxisAlignment:
-                        MainAxisAlignment.end, // Align buttons to the right
+                        MainAxisAlignment.end,
                     children: [
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -131,8 +131,8 @@ class _NotepadScreenState extends State<NotepadScreen> {
                           ),
                           padding: const EdgeInsets.all(20.0),
                           backgroundColor:
-                              Colors.black, // Button background color
-                          foregroundColor: Colors.white, // Button text color
+                              Colors.black,
+                          foregroundColor: Colors.white,
                           side:
                               const BorderSide(color: Colors.grey, width: 2.0),
                         ),
@@ -157,7 +157,7 @@ class _NotepadScreenState extends State<NotepadScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(width: 10), // Add spacing between buttons
+                      const SizedBox(width: 10),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
@@ -165,8 +165,8 @@ class _NotepadScreenState extends State<NotepadScreen> {
                           ),
                           padding: const EdgeInsets.all(20.0),
                           backgroundColor:
-                              Colors.black, // Button background color
-                          foregroundColor: Colors.white, // Button text color
+                              Colors.black,
+                          foregroundColor: Colors.white,
                           side:
                               const BorderSide(color: Colors.grey, width: 2.0),
                         ),

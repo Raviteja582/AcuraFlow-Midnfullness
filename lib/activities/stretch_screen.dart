@@ -35,8 +35,8 @@ class StretchScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                      'assets/background.png'), // Specify the image path
-                  fit: BoxFit.cover, // Cover the entire screen
+                      'assets/background.png'),
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -60,7 +60,7 @@ class StretchScreen extends StatelessWidget {
                     child: ListView.builder(
                       padding: const EdgeInsets.all(15),
                       itemCount: textItems
-                          .length, // Set the number of items in the list
+                          .length,
                       itemBuilder: (context, index) {
                         final imagePath = "assets/Stretch_$index.PNG";
                         return Padding(
@@ -69,8 +69,8 @@ class StretchScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               color: Colors.black,
                               border: Border.all(
-                                color: Colors.grey, // Border color
-                                width: 2.0, // Border width
+                                color: Colors.grey,
+                                width: 2.0,
                               ),
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
@@ -84,7 +84,7 @@ class StretchScreen extends StatelessWidget {
                             ),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment
-                                  .start, // Align text to the left
+                                  .start,
                               children: [
                                 SizedBox(
                                   width: 130,
@@ -102,11 +102,10 @@ class StretchScreen extends StatelessWidget {
                                     color: Colors.black,
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment
-                                          .center, // Align text to the left
+                                          .center,
                                       children: [
                                         Text(
                                           textItems[index],
-                                          // Use main text from the array
                                           style: const TextStyle(
                                               fontSize: 16,
                                               color: Colors.white,
@@ -122,7 +121,7 @@ class StretchScreen extends StatelessWidget {
                                             overflow: TextOverflow.visible,
                                             softWrap: true,
                                             textItemsDesc[
-                                                index], // Use description text from the array
+                                                index],
                                             style: const TextStyle(
                                                 fontSize: 14,
                                                 color: Colors.grey,

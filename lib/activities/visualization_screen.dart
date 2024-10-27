@@ -69,8 +69,8 @@ class _AlarmPageState extends State<AlarmPage> {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                      'assets/background.png'), // Specify the image path
-                  fit: BoxFit.cover, // Cover the entire screen
+                      'assets/background.png'),
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -159,7 +159,7 @@ class _AlarmPageState extends State<AlarmPage> {
                           decoration: BoxDecoration(
                             image: const DecorationImage(
                               image: AssetImage(
-                                  'assets/button_bg.png'), // Set your image path
+                                  'assets/button_bg.png'),
                               fit: BoxFit.fill,
                             ),
                             borderRadius: BorderRadius.circular(10),
@@ -201,7 +201,7 @@ class _AlarmPageState extends State<AlarmPage> {
                           decoration: BoxDecoration(
                             image: const DecorationImage(
                               image: AssetImage(
-                                  'assets/button_bg.png'), // Set your image path
+                                  'assets/button_bg.png'),
                               fit: BoxFit.fill,
                             ),
                             borderRadius: BorderRadius.circular(10),
@@ -243,7 +243,7 @@ class _AlarmPageState extends State<AlarmPage> {
                           decoration: BoxDecoration(
                             image: const DecorationImage(
                               image: AssetImage(
-                                  'assets/button_bg.png'), // Set your image path
+                                  'assets/button_bg.png'),
                               fit: BoxFit.fill,
                             ),
                             borderRadius: BorderRadius.circular(10),

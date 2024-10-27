@@ -23,8 +23,8 @@ class MeditationScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                      'assets/background.png'), // Specify the image path
-                  fit: BoxFit.cover, // Cover the entire screen
+                      'assets/background.png'),
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -124,7 +124,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     await _controller.initialize();
     _chewieController = ChewieController(
       videoPlayerController: _controller,
-      aspectRatio: 16 / 9, // Adjust this to match your video's aspect ratio
+      aspectRatio: 16 / 9,
       autoInitialize: true,
       autoPlay: false,
       looping: false,
@@ -159,20 +159,20 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       child: Column(
         children: <Widget>[
           Container(
-            width: 300.0, // Set a fixed width
-            height: 200.0, // Set a fixed height
+            width: 300.0,
+            height: 200.0,
             child: _isVideoInitializing
                 ? (Container(
-                    width: 40.0, // Set a fixed width
-                    height: 40.0, // Set a fixed height
+                    width: 40.0,
+                    height: 40.0,
                     child: const Center(
                       child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(
-                            Colors.black), // Set the color
-                        strokeWidth: 3.0, // Set the stroke width
+                            Colors.black),
+                        strokeWidth: 3.0,
                       ),
                     ),
-                  )) // Set the stroke width) // Display a loading indicator
+                  ))
                 : Chewie(controller: _chewieController),
           ),
         ],
