@@ -8,81 +8,94 @@ class MeditationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
-        title: Container(
-          decoration: const BoxDecoration(
-            color: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          elevation: 0,
+          title: const Text(
+            "Meditation",
+            style: TextStyle(fontFamily: 'Playwrite'),
           ),
+          foregroundColor: Colors.white,
         ),
-        foregroundColor: Colors.white,
-      ),
-      body: ListView(
-        children: <Widget>[
-          const Padding(
-            padding: EdgeInsets.only(left: 15, right: 15, top: 20),
-            child: Text(
-              'Inner Harmony: Guided Meditation Journeys..',
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Playwrite'
+        body: Stack(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'assets/background.png'), // Specify the image path
+                  fit: BoxFit.cover, // Cover the entire screen
+                ),
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Text(
-              'Discover inner tranquility and transform your life through the power of meditation – find your calm within the chaos.',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.normal,
-                fontFamily: 'Playwrite'
+            Center(
+              child: ListView(
+                children: <Widget>[
+                  const Padding(
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 20),
+                    child: Text(
+                      'Inner Harmony: Guided Meditation Journeys..',
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Playwrite'),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                    child: Text(
+                      'Discover inner tranquility and transform your life through the power of meditation – find your calm within the chaos.',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          fontFamily: 'Playwrite'),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  VideoPlayerWidget(videoAsset: 'assets/video_1.mp4'),
+                  const SizedBox(height: 5.0),
+                  const Text(
+                    '5-Minute Meditation You Can Do Anywhere',
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Playwrite'),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 20.0),
+                  VideoPlayerWidget(videoAsset: 'assets/video_2.mp4'),
+                  const SizedBox(height: 5.0),
+                  const Text(
+                    '10-Minute Meditation for Beginners',
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Playwrite'),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 20.0),
+                  VideoPlayerWidget(videoAsset: 'assets/video_3.mp4'),
+                  const SizedBox(height: 5.0),
+                  const Text(
+                    '15-Minute Meditation for Self Love',
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Playwrite'),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 20.0),
+                ],
               ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          VideoPlayerWidget(videoAsset: 'assets/video_1.mp4'),
-          const SizedBox(height: 5.0),
-          const Text(
-            '5-Minute Meditation You Can Do Anywhere',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Playwrite'
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 20.0),
-          VideoPlayerWidget(videoAsset: 'assets/video_2.mp4'),
-          const SizedBox(height: 5.0),
-          const Text(
-            '10-Minute Meditation for Beginners',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Playwrite'
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 20.0),
-          VideoPlayerWidget(videoAsset: 'assets/video_3.mp4'),
-          const SizedBox(height: 5.0),
-          const Text(
-            '15-Minute Meditation for Self Love',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Playwrite'
-            ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 20.0),
-        ],
-      ),
-    );
+            )
+          ],
+        ));
   }
 }
 
@@ -123,6 +136,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       });
     }
   }
+
   @override
   void dispose() {
     super.dispose();

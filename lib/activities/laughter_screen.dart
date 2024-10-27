@@ -3,53 +3,65 @@ import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
 
 class LaughterScreen extends StatelessWidget {
-  const LaughterScreen({Key? key});
+  const LaughterScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Laughter Videos", style: TextStyle(fontFamily: 'Playwrite'),),
-      ),
-      body: ListView(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              'Laughter can make you healthy!',
-              style: TextStyle(
-                fontSize: 20.0,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          foregroundColor: Colors.white,
+          title: const Text(
+            "Laughter Videos",
+            style: TextStyle(
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'Playwrite'
+                fontFamily: 'Playwrite'),
+          ),
+        ),
+        body: Stack(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'assets/background.png'), // Specify the image path
+                  fit: BoxFit.cover, // Cover the entire screen
+                ),
               ),
-              textAlign: TextAlign.justify,
             ),
-          ),
-          VideoPlayerWidget(videoAsset: 'assets/myvideo_1.mp4'),
-          SizedBox(height: 10.0),
-          VideoPlayerWidget(videoAsset: 'assets/myvideo_2.mp4'),
-          SizedBox(height: 10.0),
-          VideoPlayerWidget(videoAsset: 'assets/myvideo_3.mp4'),
-          SizedBox(height: 10.0),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text("Back to Home", style: TextStyle(fontFamily: 'Playwrite'),),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.red,
-              minimumSize: Size(100, 30),
-            ),
-          ),
-        ],
-      ),
-    );
+            Center(
+              child: ListView(
+                children: <Widget>[
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      'Laughter can make you healthy!',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Playwrite'),
+                      textAlign: TextAlign.justify,
+                    ),
+                  ),
+                  VideoPlayerWidget(videoAsset: 'assets/myvideo_1.mp4'),
+                  const SizedBox(height: 10.0),
+                  VideoPlayerWidget(videoAsset: 'assets/myvideo_2.mp4'),
+                  const SizedBox(height: 10.0),
+                  VideoPlayerWidget(videoAsset: 'assets/myvideo_3.mp4'),
+                  const SizedBox(height: 10.0),
+                ],
+              ),
+            )
+          ],
+        ));
   }
 }
 
 class VideoPlayerWidget extends StatefulWidget {
   final String videoAsset;
 
-  VideoPlayerWidget({required this.videoAsset});
+  VideoPlayerWidget({super.key, required this.videoAsset});
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();

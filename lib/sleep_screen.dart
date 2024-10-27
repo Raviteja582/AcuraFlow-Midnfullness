@@ -8,69 +8,82 @@ class SleepScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
-        title: Container(
-          decoration: const BoxDecoration(
-            color: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          elevation: 0,
+          title: const Text(
+            "Sleepfulness",
+            style: TextStyle(fontFamily: 'Playwrite'),
           ),
+          foregroundColor: Colors.white,
         ),
-        foregroundColor: Colors.white,
-      ),
-      body: ListView(
-        children: const <Widget>[
-          Padding(
-            padding: EdgeInsets.only(left: 20, right: 20, top: 20),
-            child: Text(
-              'A Guide to a Restful Sleep',
-              style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Playwrite'
+        body: Stack(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                      'assets/background.png'), // Specify the image path
+                  fit: BoxFit.cover, // Cover the entire screen
+                ),
               ),
-              textAlign: TextAlign.center,
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Text(
-              'Improve your concentration, emotional ressilence and overall well-being, enabling a more present and mindful life.',
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.normal,
-                fontFamily: 'Playwrite'
+            Center(
+              child: ListView(
+                children: const <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20, top: 20),
+                    child: Text(
+                      'A Guide to a Restful Sleep',
+                      style: TextStyle(
+                          fontSize: 20.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Playwrite'),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                    child: Text(
+                      'Improve your concentration, emotional ressilence and overall well-being, enabling a more present and mindful life.',
+                      style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal,
+                          fontFamily: 'Playwrite'),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  VideoPlayerWidget(videoAsset: 'assets/video_4.mp4'),
+                  SizedBox(height: 5.0),
+                  Text(
+                    'ULTIMATE DEEP SLEEP music- Healing INSOMNIA',
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Playwrite'),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 20.0),
+                  VideoPlayerWidget(videoAsset: 'assets/video_5.mp4'),
+                  SizedBox(height: 5.0),
+                  Text(
+                    '10-Minute Meditation for Sleep',
+                    style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Playwrite'),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 20.0),
+                ],
               ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          VideoPlayerWidget(videoAsset: 'assets/video_4.mp4'),
-          SizedBox(height: 5.0),
-          Text(
-            'ULTIMATE DEEP SLEEP music- Healing INSOMNIA',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Playwrite'
-            ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 20.0),
-          VideoPlayerWidget(videoAsset: 'assets/video_5.mp4'),
-          SizedBox(height: 5.0),
-          Text(
-            '10-Minute Meditation for Sleep',
-            style: TextStyle(
-              fontSize: 15,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Playwrite'
-            ),
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(height: 20.0),
-        ],
-      ),
-    );
+            )
+          ],
+        ));
   }
 }
 
