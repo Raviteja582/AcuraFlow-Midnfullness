@@ -3,42 +3,47 @@ import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
 
 class MusicScreen extends StatelessWidget {
-  const MusicScreen({Key? key});
+  const MusicScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Gentle Music", style: TextStyle(fontFamily: 'Playwrite'),),
+        title: const Text(
+          "Gentle Music",
+          style: TextStyle(fontFamily: 'Playwrite'),
+        ),
       ),
       body: ListView(
         children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.all(16.0),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
             child: Text(
               'Music can help you relax.',
               style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Playwrite'
-              ),
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Playwrite'),
               textAlign: TextAlign.justify,
             ),
           ),
-          VideoPlayerWidget(videoAsset: 'assets/myvideo_4.mp4'),
-          SizedBox(height: 10.0),
-          VideoPlayerWidget(videoAsset: 'assets/myvideo_5.mp4'),
-          SizedBox(height: 10.0),
-          VideoPlayerWidget(videoAsset: 'assets/myvideo_6.mp4'),
-          SizedBox(height: 10.0),
+          const VideoPlayerWidget(videoAsset: 'assets/myvideo_4.mp4'),
+          const SizedBox(height: 10.0),
+          const VideoPlayerWidget(videoAsset: 'assets/myvideo_5.mp4'),
+          const SizedBox(height: 10.0),
+          const VideoPlayerWidget(videoAsset: 'assets/myvideo_6.mp4'),
+          const SizedBox(height: 10.0),
           ElevatedButton(
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text("Back to Home", style: TextStyle(fontFamily: 'Playwrite'),),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
-              minimumSize: Size(100, 30),
+              minimumSize: const Size(100, 30),
+            ),
+            child: const Text(
+              "Back to Home",
+              style: TextStyle(fontFamily: 'Playwrite'),
             ),
           ),
         ],
@@ -50,9 +55,10 @@ class MusicScreen extends StatelessWidget {
 class VideoPlayerWidget extends StatefulWidget {
   final String videoAsset;
 
-  VideoPlayerWidget({required this.videoAsset});
+  const VideoPlayerWidget({super.key, required this.videoAsset});
 
   @override
+  // ignore: library_private_types_in_public_api
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
 }
 
@@ -99,17 +105,16 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       },
       child: Column(
         children: <Widget>[
-          Container(
+          SizedBox(
             width: 300.0,
             height: 200.0,
             child: _isVideoInitializing
-                ? (Container(
+                ? (const SizedBox(
                     width: 40.0,
                     height: 40.0,
-                    child: const Center(
+                    child: Center(
                       child: CircularProgressIndicator(
-                        valueColor: AlwaysStoppedAnimation<Color>(
-                            Colors.black),
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
                         strokeWidth: 3.0,
                       ),
                     ),

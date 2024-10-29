@@ -31,8 +31,8 @@ class LaughterScreen extends StatelessWidget {
             ),
             Center(
               child: ListView(
-                children: <Widget>[
-                  const Padding(
+                children: const <Widget>[
+                  Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Text(
                       'Laughter can make you healthy!',
@@ -45,11 +45,11 @@ class LaughterScreen extends StatelessWidget {
                     ),
                   ),
                   VideoPlayerWidget(videoAsset: 'assets/myvideo_1.mp4'),
-                  const SizedBox(height: 10.0),
+                  SizedBox(height: 10.0),
                   VideoPlayerWidget(videoAsset: 'assets/myvideo_2.mp4'),
-                  const SizedBox(height: 10.0),
+                  SizedBox(height: 10.0),
                   VideoPlayerWidget(videoAsset: 'assets/myvideo_3.mp4'),
-                  const SizedBox(height: 10.0),
+                  SizedBox(height: 10.0),
                 ],
               ),
             )
@@ -61,7 +61,7 @@ class LaughterScreen extends StatelessWidget {
 class VideoPlayerWidget extends StatefulWidget {
   final String videoAsset;
 
-  VideoPlayerWidget({super.key, required this.videoAsset});
+  const VideoPlayerWidget({super.key, required this.videoAsset});
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
@@ -110,14 +110,14 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       },
       child: Column(
         children: <Widget>[
-          Container(
+          SizedBox(
             width: 300.0,
             height: 200.0,
             child: _isVideoInitializing
-                ? (Container(
+                ? (const SizedBox(
                     width: 40.0,
                     height: 40.0,
-                    child: const Center(
+                    child: Center(
                       child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(
                             Colors.black),

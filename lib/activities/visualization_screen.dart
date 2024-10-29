@@ -11,7 +11,7 @@ class AlarmPage extends StatefulWidget {
 }
 
 class _AlarmPageState extends State<AlarmPage> {
-  int _initialDuration = 180; // 3 minutes (3 minutes * 60 seconds)
+  final int _initialDuration = 180; // 3 minutes (3 minutes * 60 seconds)
   int _duration = 180;
   bool _isTimerRunning = false;
   late Timer _timer;

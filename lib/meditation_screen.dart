@@ -3,7 +3,7 @@ import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
 
 class MeditationScreen extends StatelessWidget {
-  const MeditationScreen({Key? key}) : super(key: key);
+  const MeditationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +30,8 @@ class MeditationScreen extends StatelessWidget {
             ),
             Center(
               child: ListView(
-                children: <Widget>[
-                  const Padding(
+                children: const <Widget>[
+                  Padding(
                     padding: EdgeInsets.only(left: 15, right: 15, top: 20),
                     child: Text(
                       'Inner Harmony: Guided Meditation Journeys..',
@@ -43,7 +43,7 @@ class MeditationScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.only(left: 20, right: 20, bottom: 20),
                     child: Text(
                       'Discover inner tranquility and transform your life through the power of meditation – find your calm within the chaos.',
@@ -56,8 +56,8 @@ class MeditationScreen extends StatelessWidget {
                     ),
                   ),
                   VideoPlayerWidget(videoAsset: 'assets/video_1.mp4'),
-                  const SizedBox(height: 5.0),
-                  const Text(
+                  SizedBox(height: 5.0),
+                  Text(
                     '5-Minute Meditation You Can Do Anywhere',
                     style: TextStyle(
                         fontSize: 15,
@@ -66,10 +66,10 @@ class MeditationScreen extends StatelessWidget {
                         fontFamily: 'Playwrite'),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 20.0),
+                  SizedBox(height: 20.0),
                   VideoPlayerWidget(videoAsset: 'assets/video_2.mp4'),
-                  const SizedBox(height: 5.0),
-                  const Text(
+                  SizedBox(height: 5.0),
+                  Text(
                     '10-Minute Meditation for Beginners',
                     style: TextStyle(
                         fontSize: 15,
@@ -78,10 +78,10 @@ class MeditationScreen extends StatelessWidget {
                         fontFamily: 'Playwrite'),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 20.0),
+                  SizedBox(height: 20.0),
                   VideoPlayerWidget(videoAsset: 'assets/video_3.mp4'),
-                  const SizedBox(height: 5.0),
-                  const Text(
+                  SizedBox(height: 5.0),
+                  Text(
                     '15-Minute Meditation for Self Love',
                     style: TextStyle(
                         fontSize: 15,
@@ -90,7 +90,7 @@ class MeditationScreen extends StatelessWidget {
                         fontFamily: 'Playwrite'),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 20.0),
+                  SizedBox(height: 20.0),
                 ],
               ),
             )
@@ -102,7 +102,7 @@ class MeditationScreen extends StatelessWidget {
 class VideoPlayerWidget extends StatefulWidget {
   final String videoAsset;
 
-  VideoPlayerWidget({required this.videoAsset});
+  const VideoPlayerWidget({super.key, required this.videoAsset});
 
   @override
   _VideoPlayerWidgetState createState() => _VideoPlayerWidgetState();
@@ -158,14 +158,14 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       },
       child: Column(
         children: <Widget>[
-          Container(
+          SizedBox(
             width: 300.0,
             height: 200.0,
             child: _isVideoInitializing
-                ? (Container(
+                ? (const SizedBox(
                     width: 40.0,
                     height: 40.0,
-                    child: const Center(
+                    child: Center(
                       child: CircularProgressIndicator(
                         valueColor: AlwaysStoppedAnimation<Color>(
                             Colors.black),
